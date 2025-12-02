@@ -133,29 +133,29 @@
         /* Hero Section */
         .hero {
             background-color: var(--light-gray);
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
 
         .hero h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-bottom: 15px;
             font-weight: 700;
             color: var(--dark);
         }
 
         .hero p {
-            font-size: 17px;
+            font-size: 16px;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto 25px;
             color: var(--gray);
         }
 
         .hero-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
@@ -166,18 +166,19 @@
             gap: 8px;
             background-color: var(--primary);
             color: var(--white);
-            padding: 12px 28px;
+            padding: 12px 24px;
             border-radius: var(--radius);
             text-decoration: none;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 14px;
             border: none;
             cursor: pointer;
-            transition: background-color 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .btn:hover {
             background-color: var(--primary-light);
+            transform: translateY(-2px);
         }
 
         .btn-outline {
@@ -201,18 +202,18 @@
 
         /* Section Styles */
         section {
-            padding: 70px 0;
+            padding: 60px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .section-title h2 {
-            font-size: 32px;
+            font-size: 28px;
             color: var(--dark);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 700;
             position: relative;
             display: inline-block;
@@ -234,7 +235,7 @@
             color: var(--gray);
             max-width: 600px;
             margin: 0 auto;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         /* Motor List Styles */
@@ -243,19 +244,19 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .filter-btn {
             background-color: var(--white);
             border: 1px solid var(--border-color);
-            padding: 9px 20px;
+            padding: 8px 16px;
             border-radius: var(--radius);
             cursor: pointer;
             font-weight: 500;
             color: var(--dark);
             transition: all 0.2s ease;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .filter-btn:hover {
@@ -271,8 +272,8 @@
 
         .motor-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
         }
 
         .motor-card {
@@ -281,12 +282,13 @@
             border: 1px solid var(--border-color);
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: box-shadow 0.2s ease;
+            transition: all 0.3s ease;
             position: relative;
         }
 
         .motor-card:hover {
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
         }
 
         .motor-badge {
@@ -295,27 +297,45 @@
             left: 10px;
             background-color: var(--primary);
             color: var(--white);
-            padding: 4px 10px;
+            padding: 4px 8px;
             border-radius: 3px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 600;
             z-index: 2;
         }
 
+        /* PERBAIKAN UTAMA: Gambar dengan rasio 1:1 */
         .motor-img {
-            height: 160px;
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* Membuat kontainer dengan rasio 1:1 */
             overflow: hidden;
             background-color: #f9f9f9;
-            position: relative;
+        }
+
+        .motor-img-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: #f5f5f5;
         }
 
-        .motor-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .motor-img-content img {
+            max-width: 85%;
+            max-height: 85%;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Tidak melakukan zoom/crop */
+            transition: transform 0.5s ease;
+        }
+
+        .motor-card:hover .motor-img-content img {
+            transform: scale(1.05);
         }
 
         .motor-img-overlay {
@@ -325,18 +345,19 @@
             right: 0;
             background: rgba(0, 0, 0, 0.7);
             color: white;
-            padding: 8px;
-            font-size: 12px;
+            padding: 6px;
+            font-size: 11px;
             text-align: center;
+            z-index: 1;
         }
 
         .motor-info {
-            padding: 18px;
+            padding: 15px;
         }
 
         .motor-info h3 {
-            font-size: 17px;
-            margin-bottom: 12px;
+            font-size: 16px;
+            margin-bottom: 10px;
             color: var(--dark);
             font-weight: 600;
             text-align: center;
@@ -344,24 +365,24 @@
 
         .motor-price-table {
             width: 100%;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border-collapse: collapse;
+            font-size: 12px;
         }
 
         .motor-price-table th {
             background-color: var(--light-gray);
             color: var(--dark);
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
-            padding: 8px 5px;
+            padding: 6px 4px;
             text-align: center;
             border: 1px solid var(--border-color);
         }
 
         .motor-price-table td {
-            padding: 8px 5px;
+            padding: 6px 4px;
             text-align: center;
-            font-size: 13px;
             color: var(--gray);
             border: 1px solid var(--border-color);
         }
@@ -374,8 +395,8 @@
         .motor-specs {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 18px;
-            padding: 12px 0;
+            margin-bottom: 15px;
+            padding: 10px 0;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
@@ -387,13 +408,13 @@
 
         .spec i {
             color: var(--primary);
-            font-size: 14px;
-            margin-bottom: 5px;
+            font-size: 13px;
+            margin-bottom: 3px;
         }
 
         .spec span {
             display: block;
-            font-size: 11px;
+            font-size: 10px;
             color: var(--gray);
             font-weight: 500;
         }
@@ -405,13 +426,13 @@
         }
 
         .price-amount {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: var(--primary);
         }
 
         .price-period {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--gray);
         }
 
@@ -419,17 +440,17 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 5px;
             background-color: #25D366;
             color: white;
-            padding: 10px 18px;
+            padding: 8px 15px;
             border-radius: var(--radius);
             text-decoration: none;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             transition: background-color 0.2s ease;
             width: 100%;
-            margin-top: 15px;
+            margin-top: 12px;
         }
 
         .wa-btn:hover {
@@ -437,41 +458,46 @@
         }
 
         .wa-btn i {
-            font-size: 14px;
+            font-size: 13px;
         }
 
         /* Quick Stats */
         .stats-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
         }
 
         .stat-box {
             background-color: var(--white);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
-            padding: 25px 20px;
+            padding: 20px 15px;
             text-align: center;
             box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-3px);
         }
 
         .stat-box i {
-            font-size: 32px;
+            font-size: 28px;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .stat-number {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 5px;
         }
 
         .stat-text {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray);
             font-weight: 500;
         }
@@ -479,25 +505,30 @@
         /* Terms & Conditions Section */
         .terms-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .terms-box {
             background-color: var(--white);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
-            padding: 25px;
+            padding: 20px;
             box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .terms-box:hover {
+            transform: translateY(-3px);
         }
 
         .terms-box h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
+            font-size: 18px;
+            margin-bottom: 15px;
             color: var(--dark);
             font-weight: 700;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
         .terms-box h3::after {
@@ -515,20 +546,21 @@
         }
 
         .terms-box ul li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: var(--gray);
-            font-size: 14px;
+            font-size: 13px;
             position: relative;
-            padding-left: 22px;
+            padding-left: 20px;
+            line-height: 1.5;
         }
 
         .terms-box ul li::before {
             content: '•';
             color: var(--primary);
-            font-size: 18px;
+            font-size: 16px;
             position: absolute;
             left: 0;
-            top: -2px;
+            top: 0;
         }
 
         .terms-box .highlight {
@@ -545,27 +577,32 @@
 
         .facilities-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .facility-box {
             background-color: var(--white);
             border-radius: var(--radius);
             border: 1px solid var(--border-color);
-            padding: 25px;
+            padding: 20px;
             box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .facility-box:hover {
+            transform: translateY(-3px);
         }
 
         .facility-box i {
-            font-size: 36px;
+            font-size: 32px;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .facility-box h3 {
-            font-size: 18px;
-            margin-bottom: 15px;
+            font-size: 16px;
+            margin-bottom: 12px;
             color: var(--dark);
             font-weight: 700;
         }
@@ -575,11 +612,12 @@
         }
 
         .facility-box ul li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--gray);
-            font-size: 14px;
+            font-size: 13px;
             position: relative;
-            padding-left: 20px;
+            padding-left: 18px;
+            line-height: 1.5;
         }
 
         .facility-box ul li::before {
@@ -588,29 +626,31 @@
             font-weight: bold;
             position: absolute;
             left: 0;
+            font-size: 12px;
         }
 
         /* Contact Section */
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .contact-info {
             background-color: var(--white);
-            padding: 30px;
+            padding: 25px;
             border-radius: var(--radius);
             border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
         }
 
         .contact-info h3 {
-            font-size: 22px;
-            margin-bottom: 25px;
+            font-size: 20px;
+            margin-bottom: 20px;
             color: var(--dark);
             font-weight: 700;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
         .contact-info h3::after {
@@ -626,45 +666,45 @@
         .contact-item {
             display: flex;
             align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 22px;
+            gap: 12px;
+            margin-bottom: 18px;
         }
 
         .contact-item i {
             color: var(--primary);
-            font-size: 18px;
-            margin-top: 3px;
-            width: 20px;
+            font-size: 16px;
+            margin-top: 2px;
+            width: 16px;
         }
 
         .contact-item h4 {
-            font-size: 15px;
-            margin-bottom: 5px;
+            font-size: 14px;
+            margin-bottom: 3px;
             color: var(--dark);
             font-weight: 600;
         }
 
         .contact-item p {
             color: var(--gray);
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .social-links {
             display: flex;
-            gap: 12px;
-            margin-top: 25px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             background-color: var(--light-gray);
             color: var(--dark);
             border-radius: var(--radius);
-            font-size: 16px;
+            font-size: 14px;
             transition: all 0.2s ease;
             border: 1px solid var(--border-color);
         }
@@ -673,11 +713,12 @@
             background-color: var(--primary);
             color: var(--white);
             border-color: var(--primary);
+            transform: translateY(-2px);
         }
 
         .whatsapp-box {
             background-color: var(--white);
-            padding: 30px;
+            padding: 25px;
             border-radius: var(--radius);
             border: 1px solid var(--border-color);
             text-align: center;
@@ -685,60 +726,84 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-box:hover {
+            transform: translateY(-3px);
         }
 
         .whatsapp-box h3 {
-            font-size: 22px;
-            margin-bottom: 20px;
+            font-size: 20px;
+            margin-bottom: 15px;
             color: var(--dark);
             font-weight: 700;
         }
 
         .whatsapp-box p {
             color: var(--gray);
-            margin-bottom: 25px;
-            font-size: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
             max-width: 400px;
+            line-height: 1.5;
         }
 
         .whatsapp-box .btn {
-            font-size: 16px;
-            padding: 14px 32px;
+            font-size: 15px;
+            padding: 12px 25px;
         }
 
         /* Info Banner */
         .info-banner {
             background-color: var(--primary);
             color: var(--white);
-            padding: 15px 0;
+            padding: 12px 0;
             text-align: center;
             font-weight: 600;
-            font-size: 16px;
-            margin-bottom: 30px;
+            font-size: 14px;
+            margin-bottom: 25px;
             border-radius: var(--radius);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-banner:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .info-banner:hover:before {
+            left: 100%;
         }
 
         /* Footer */
         footer {
             background-color: var(--dark);
             color: var(--white);
-            padding: 60px 0 30px;
+            padding: 50px 0 25px;
         }
 
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
         }
 
         .footer-col h3 {
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 16px;
+            margin-bottom: 15px;
             color: var(--white);
             font-weight: 700;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
         .footer-col h3::after {
@@ -753,8 +818,9 @@
 
         .footer-col p {
             color: #B0B0B0;
-            margin-bottom: 20px;
-            font-size: 14px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            line-height: 1.5;
         }
 
         .footer-col ul {
@@ -762,14 +828,14 @@
         }
 
         .footer-col ul li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .footer-col ul li a {
             color: #B0B0B0;
             text-decoration: none;
             transition: color 0.2s ease;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .footer-col ul li a:hover {
@@ -778,55 +844,57 @@
 
         .footer-social-links {
             display: flex;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 10px;
+            margin-top: 15px;
         }
 
         .footer-social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             background-color: #3A4A5C;
             color: var(--white);
             border-radius: var(--radius);
-            font-size: 16px;
+            font-size: 14px;
             transition: all 0.2s ease;
         }
 
         .footer-social-links a:hover {
             background-color: var(--primary);
+            transform: translateY(-2px);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 25px;
             border-top: 1px solid #3A4A5C;
             color: #B0B0B0;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
+            bottom: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
             background-color: var(--primary);
             color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             cursor: pointer;
             transition: all 0.3s ease;
             opacity: 0;
             visibility: hidden;
             z-index: 99;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: none;
         }
 
         .back-to-top.show {
@@ -839,71 +907,81 @@
             transform: translateY(-3px);
         }
 
-        /* Placeholder Image */
+        /* Placeholder Image dengan rasio 1:1 */
         .placeholder-img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #f5f5f5 25%, #e0e0e0 25%, #e0e0e0 50%, #f5f5f5 50%, #f5f5f5 75%, #e0e0e0 75%);
-            background-size: 20px 20px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
             color: #999;
-            font-size: 14px;
             text-align: center;
             padding: 20px;
+        }
+
+        .placeholder-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #ccc;
         }
 
         /* Responsive Styles */
         @media (max-width: 1100px) {
             .motor-grid {
-                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             }
         }
 
         @media (max-width: 992px) {
             nav ul {
-                gap: 20px;
+                gap: 18px;
             }
             
             .motor-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
             }
             
             .terms-container, .facilities-container {
                 grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
             }
         }
 
         @media (max-width: 768px) {
             .header-container {
-                flex-direction: column;
-                gap: 15px;
+                flex-direction: row;
+                gap: 0;
             }
             
             nav ul {
-                gap: 15px;
+                gap: 0;
             }
             
             .hero h2 {
-                font-size: 28px;
+                font-size: 26px;
             }
             
             .hero p {
-                font-size: 16px;
+                font-size: 15px;
             }
             
             .mobile-menu-btn {
                 display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
+                position: static;
             }
             
             nav {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
                 width: 100%;
-                margin-top: 15px;
+                background-color: var(--white);
+                border-top: 1px solid var(--border-color);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
             }
             
             nav.active {
@@ -923,11 +1001,11 @@
             }
             
             section {
-                padding: 60px 0;
+                padding: 50px 0;
             }
             
             .section-title h2 {
-                font-size: 26px;
+                font-size: 24px;
             }
             
             .motor-grid {
@@ -935,11 +1013,11 @@
             }
             
             .back-to-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-                font-size: 18px;
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
             }
             
             .stats-container {
@@ -949,32 +1027,32 @@
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
-                gap: 15px;
+                gap: 12px;
             }
             
             .hero-buttons .btn {
                 width: 100%;
-                max-width: 300px;
+                max-width: 280px;
                 justify-content: center;
             }
         }
 
         @media (max-width: 576px) {
             .hero {
-                padding: 60px 0;
+                padding: 50px 0;
             }
             
             .hero h2 {
-                font-size: 24px;
+                font-size: 22px;
             }
             
             .section-title h2 {
-                font-size: 22px;
+                font-size: 20px;
             }
             
             .motor-grid {
                 grid-template-columns: 1fr;
-                max-width: 320px;
+                max-width: 300px;
                 margin: 0 auto;
             }
             
@@ -988,7 +1066,7 @@
             
             .btn {
                 padding: 10px 20px;
-                font-size: 14px;
+                font-size: 13px;
             }
             
             .stats-container {
@@ -999,7 +1077,7 @@
                 justify-content: flex-start;
                 overflow-x: auto;
                 padding-bottom: 10px;
-                margin-bottom: 30px;
+                margin-bottom: 25px;
             }
             
             .filter-btn {
@@ -1007,8 +1085,8 @@
             }
             
             .info-banner {
-                font-size: 14px;
-                padding: 12px 15px;
+                font-size: 13px;
+                padding: 10px 12px;
             }
         }
     </style>
@@ -1033,13 +1111,20 @@
                 <ul>
                     <li><a href="#home" class="active">Beranda</a></li>
                     <li><a href="#motor">Motor</a></li>
-                    <li><a href="#terms">Syarat & Ketentuan</a></li>
+                    <li><a href="#terms">Syarat</a></li>
                     <li><a href="#facilities">Fasilitas</a></li>
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <!-- Info Banner -->
+    <div class="container">
+        <div class="info-banner">
+            <i class="fas fa-bell"></i> Gratis helm & jas hujan untuk setiap penyewaan
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -1093,785 +1178,14 @@
             <div class="motor-filter">
                 <button class="filter-btn active" data-filter="all">Semua</button>
                 <button class="filter-btn" data-filter="honda">Honda</button>
+                <button class="filter-btn" data-filter="yamaha">Yamaha</button>
                 <button class="filter-btn" data-filter="beat">Beat</button>
                 <button class="filter-btn" data-filter="vario">Vario</button>
-                <button class="filter-btn" data-filter="pcx">PCX</button>
                 <button class="filter-btn" data-filter="scoopy">Scoopy</button>
             </div>
             
             <div class="motor-grid" id="motorGrid">
-                <!-- Motor 1: BEAT FI / BEAT CW -->
-                <div class="motor-card" data-brand="honda" data-type="beat" data-popular="true">
-                    <div class="motor-badge">Populer</div>
-                    <div class="motor-img">
-                        <img src="images/BEAT CW.jpg" alt="BEAT FI / BEAT CW" onerror="handleImageError(this, 'BEAT FI / BEAT CW')">
-                        <div class="motor-img-overlay">Hemat BBM, cocok untuk dalam kota</div>
-                    </div>
-                    <div class="motor-info">
-                        <h3>BEAT FI / BEAT CW</h3>
-                        <table class="motor-price-table">
-                            <thead>
-                                <tr>
-                                    <th>Hari</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1 Hari</td>
-                                    <td class="price-highlight">Rp 70.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2 Hari</td>
-                                    <td>Rp 140.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Hari</td>
-                                    <td>Rp 200.000</td>
-                                </tr>
-                                <tr>
-                                    <td>4 Hari</td>
-                                    <td>Rp 260.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5 Hari</td>
-                                    <td>Rp 320.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="motor-specs">
-                            <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>110cc</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Bensin</span>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <div class="price-amount">Rp 70.000</div>
-                                <div class="price-period">/ hari</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20BEAT%20FI%20/%20BEAT%20CW.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Motor 2: VARIO TECHNO -->
-                <div class="motor-card" data-brand="honda" data-type="vario" data-popular="true">
-                    <div class="motor-badge">Populer</div>
-                    <div class="motor-img">
-                        <img src="images/VARIO TECHNO.png" alt="VARIO TECHNO" onerror="handleImageError(this, 'VARIO TECHNO')">
-                        <div class="motor-img-overlay">Teknologi canggih, performa optimal</div>
-                    </div>
-                    <div class="motor-info">
-                        <h3>VARIO TECHNO</h3>
-                        <table class="motor-price-table">
-                            <thead>
-                                <tr>
-                                    <th>Hari</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1 Hari</td>
-                                    <td class="price-highlight">Rp 85.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2 Hari</td>
-                                    <td>Rp 165.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Hari</td>
-                                    <td>Rp 245.000</td>
-                                </tr>
-                                <tr>
-                                    <td>4 Hari</td>
-                                    <td>Rp 320.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5 Hari</td>
-                                    <td>Rp 400.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="motor-specs">
-                            <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>125cc</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Bensin</span>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <div class="price-amount">Rp 85.000</div>
-                                <div class="price-period">/ hari</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20VARIO%20TECHNO.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Motor 3: SCOOPY SPORTY -->
-                <div class="motor-card" data-brand="honda" data-type="scoopy">
-                    <div class="motor-img">
-                        <img src="images/scoopy-sporty.jpg" alt="SCOOPY SPORTY" onerror="handleImageError(this, 'SCOOPY SPORTY')">
-                        <div class="motor-img-overlay">Sporty dengan desain modern</div>
-                    </div>
-                    <div class="motor-info">
-                        <h3>SCOOPY SPORTY</h3>
-                        <table class="motor-price-table">
-                            <thead>
-                                <tr>
-                                    <th>Hari</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1 Hari</td>
-                                    <td class="price-highlight">Rp 90.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2 Hari</td>
-                                    <td>Rp 170.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Hari</td>
-                                    <td>Rp 260.000</td>
-                                </tr>
-                                <tr>
-                                    <td>4 Hari</td>
-                                    <td>Rp 340.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5 Hari</td>
-                                    <td>Rp 420.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="motor-specs">
-                            <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>125cc</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Bensin</span>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <div class="price-amount">Rp 90.000</div>
-                                <div class="price-period">/ hari</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20SCOOPY%20SPORTY.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Motor 4: VARIO ESP 125 -->
-                <div class="motor-card" data-brand="honda" data-type="vario">
-                    <div class="motor-img">
-                        <img src="images/vario-esp.jpg" alt="VARIO ESP 125" onerror="handleImageError(this, 'VARIO ESP 125')">
-                        <div class="motor-img-overlay">ESP dengan teknologi terbaru</div>
-                    </div>
-                    <div class="motor-info">
-                        <h3>VARIO ESP 125</h3>
-                        <table class="motor-price-table">
-                            <thead>
-                                <tr>
-                                    <th>Hari</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1 Hari</td>
-                                    <td class="price-highlight">Rp 90.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2 Hari</td>
-                                    <td>Rp 170.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Hari</td>
-                                    <td>Rp 260.000</td>
-                                </tr>
-                                <tr>
-                                    <td>4 Hari</td>
-                                    <td>Rp 340.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5 Hari</td>
-                                    <td>Rp 420.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="motor-specs">
-                            <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>125cc</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Bensin</span>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <div class="price-amount">Rp 90.000</div>
-                                <div class="price-period">/ hari</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20VARIO%20ESP%20125.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Motor 5: PCX 150CC -->
-                <div class="motor-card" data-brand="honda" data-type="pcx" data-popular="true">
-                    <div class="motor-badge">Populer</div>
-                    <div class="motor-img">
-                        <img src="images/pcx-150.jpg" alt="PCX 150CC" onerror="handleImageError(this, 'PCX 150CC')">
-                        <div class="motor-img-overlay">Premium 150cc untuk perjalanan jauh</div>
-                    </div>
-                    <div class="motor-info">
-                        <h3>PCX 150CC</h3>
-                        <table class="motor-price-table">
-                            <thead>
-                                <tr>
-                                    <th>Hari</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1 Hari</td>
-                                    <td class="price-highlight">Rp 125.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2 Hari</td>
-                                    <td>Rp 250.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Hari</td>
-                                    <td>Rp 350.000</td>
-                                </tr>
-                                <tr>
-                                    <td>4 Hari</td>
-                                    <td>Rp 470.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5 Hari</td>
-                                    <td>Rp 575.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="motor-specs">
-                            <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>150cc</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Bensin</span>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <div class="price-amount">Rp 125.000</div>
-                                <div class="price-period">/ hari</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20PCX%20150CC.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Motor 6: BEAT LED -->
-                <div class="motor-card" data-brand="honda" data-type="beat">
-                    <div class="motor-img">
-                        <img src="images/beat-led.jpg" alt="BEAT LED" onerror="handleImageError(this, 'BEAT LED')">
-                        <div class="motor-img-overlay">Beat dengan lampu LED</div>
-                    </div>
-                    <div class="motor-info">
-                        <h3>BEAT LED</h3>
-                        <table class="motor-price-table">
-                            <thead>
-                                <tr>
-                                    <th>Hari</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1 Hari</td>
-                                    <td class="price-highlight">Rp 80.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2 Hari</td>
-                                    <td>Rp 160.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Hari</td>
-                                    <td>Rp 230.000</td>
-                                </tr>
-                                <tr>
-                                    <td>4 Hari</td>
-                                    <td>Rp 300.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5 Hari</td>
-                                    <td>Rp 375.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="motor-specs">
-                            <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>110cc</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Bensin</span>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <div class="price-amount">Rp 80.000</div>
-                                <div class="price-period">/ hari</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20BEAT%20LED.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Motor 7: BEAT STREET -->
-                <div class="motor-card" data-brand="honda" data-type="beat">
-                    <div class="motor-img">
-                        <img src="images/beat-street.jpg" alt="BEAT STREET" onerror="handleImageError(this, 'BEAT STREET')">
-                        <div class="motor-img-overlay">Beat model Street</div>
-                    </div>
-                    <div class="motor-info">
-                        <h3>BEAT STREET</h3>
-                        <table class="motor-price-table">
-                            <thead>
-                                <tr>
-                                    <th>Hari</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1 Hari</td>
-                                    <td class="price-highlight">Rp 80.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2 Hari</td>
-                                    <td>Rp 160.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Hari</td>
-                                    <td>Rp 230.000</td>
-                                </tr>
-                                <tr>
-                                    <td>4 Hari</td>
-                                    <td>Rp 300.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5 Hari</td>
-                                    <td>Rp 375.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="motor-specs">
-                            <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>110cc</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Bensin</span>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <div class="price-amount">Rp 80.000</div>
-                                <div class="price-period">/ hari</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20BEAT%20STREET.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Motor 8: GENIO -->
-                <div class="motor-card" data-brand="honda" data-type="beat">
-                    <div class="motor-img">
-                        <img src="images/genio.jpg" alt="GENIO" onerror="handleImageError(this, 'GENIO')">
-                        <div class="motor-img-overlay">Honda Genio ekonomis</div>
-                    </div>
-                    <div class="motor-info">
-                        <h3>GENIO</h3>
-                        <table class="motor-price-table">
-                            <thead>
-                                <tr>
-                                    <th>Hari</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1 Hari</td>
-                                    <td class="price-highlight">Rp 80.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2 Hari</td>
-                                    <td>Rp 160.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Hari</td>
-                                    <td>Rp 230.000</td>
-                                </tr>
-                                <tr>
-                                    <td>4 Hari</td>
-                                    <td>Rp 300.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5 Hari</td>
-                                    <td>Rp 375.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="motor-specs">
-                            <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>110cc</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Bensin</span>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <div class="price-amount">Rp 80.000</div>
-                                <div class="price-period">/ hari</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20GENIO.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Motor 9: VARIO 110 -->
-                <div class="motor-card" data-brand="honda" data-type="vario">
-                    <div class="motor-img">
-                        <img src="images/vario-110.jpg" alt="VARIO 110" onerror="handleImageError(this, 'VARIO 110')">
-                        <div class="motor-img-overlay">Vario 110cc irit bahan bakar</div>
-                    </div>
-                    <div class="motor-info">
-                        <h3>VARIO 110</h3>
-                        <table class="motor-price-table">
-                            <thead>
-                                <tr>
-                                    <th>Hari</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1 Hari</td>
-                                    <td class="price-highlight">Rp 80.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2 Hari</td>
-                                    <td>Rp 160.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Hari</td>
-                                    <td>Rp 230.000</td>
-                                </tr>
-                                <tr>
-                                    <td>4 Hari</td>
-                                    <td>Rp 300.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5 Hari</td>
-                                    <td>Rp 375.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="motor-specs">
-                            <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>110cc</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Bensin</span>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <div class="price-amount">Rp 80.000</div>
-                                <div class="price-period">/ hari</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20VARIO%20110.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Motor 10: SCOOPY ISS -->
-                <div class="motor-card" data-brand="honda" data-type="scoopy">
-                    <div class="motor-img">
-                        <img src="images/scoopy-iss.jpg" alt="SCOOPY ISS" onerror="handleImageError(this, 'SCOOPY ISS')">
-                        <div class="motor-img-overlay">Scoopy dengan teknologi ISS</div>
-                    </div>
-                    <div class="motor-info">
-                        <h3>SCOOPY ISS</h3>
-                        <table class="motor-price-table">
-                            <thead>
-                                <tr>
-                                    <th>Hari</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1 Hari</td>
-                                    <td class="price-highlight">Rp 80.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2 Hari</td>
-                                    <td>Rp 160.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Hari</td>
-                                    <td>Rp 230.000</td>
-                                </tr>
-                                <tr>
-                                    <td>4 Hari</td>
-                                    <td>Rp 310.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5 Hari</td>
-                                    <td>Rp 380.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="motor-specs">
-                            <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>110cc</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Bensin</span>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <div class="price-amount">Rp 80.000</div>
-                                <div class="price-period">/ hari</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20SCOOPY%20ISS.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Motor 11: VARIO 2020 UP -->
-                <div class="motor-card" data-brand="honda" data-type="vario" data-popular="true">
-                    <div class="motor-badge">Populer</div>
-                    <div class="motor-img">
-                        <img src="images/vario-2020.jpg" alt="VARIO 2020 UP" onerror="handleImageError(this, 'VARIO 2020 UP')">
-                        <div class="motor-img-overlay">Vario model terbaru 2020 ke atas</div>
-                    </div>
-                    <div class="motor-info">
-                        <h3>VARIO 2020 UP</h3>
-                        <table class="motor-price-table">
-                            <thead>
-                                <tr>
-                                    <th>Hari</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1 Hari</td>
-                                    <td class="price-highlight">Rp 100.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2 Hari</td>
-                                    <td>Rp 200.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Hari</td>
-                                    <td>Rp 280.000</td>
-                                </tr>
-                                <tr>
-                                    <td>4 Hari</td>
-                                    <td>Rp 370.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5 Hari</td>
-                                    <td>Rp 450.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="motor-specs">
-                            <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>125cc</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Bensin</span>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <div class="price-amount">Rp 100.000</div>
-                                <div class="price-period">/ hari</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20VARIO%202020%20UP.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Motor 12: PCX 160CC -->
-                <div class="motor-card" data-brand="honda" data-type="pcx" data-popular="true">
-                    <div class="motor-badge">Populer</div>
-                    <div class="motor-img">
-                        <img src="images/pcx-160.jpg" alt="PCX 160CC" onerror="handleImageError(this, 'PCX 160CC')">
-                        <div class="motor-img-overlay">PCX terbaru 160cc, performa maksimal</div>
-                    </div>
-                    <div class="motor-info">
-                        <h3>PCX 160CC</h3>
-                        <table class="motor-price-table">
-                            <thead>
-                                <tr>
-                                    <th>Hari</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1 Hari</td>
-                                    <td class="price-highlight">Rp 140.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2 Hari</td>
-                                    <td>Rp 270.000</td>
-                                </tr>
-                                <tr>
-                                    <td>3 Hari</td>
-                                    <td>Rp 400.000</td>
-                                </tr>
-                                <tr>
-                                    <td>4 Hari</td>
-                                    <td>Rp 520.000</td>
-                                </tr>
-                                <tr>
-                                    <td>5 Hari</td>
-                                    <td>Rp 650.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="motor-specs">
-                            <div class="spec">
-                                <i class="fas fa-gas-pump"></i>
-                                <span>160cc</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>Automatic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-oil-can"></i>
-                                <span>Bensin</span>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <div class="price-amount">Rp 140.000</div>
-                                <div class="price-period">/ hari</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20PCX%20160CC.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
-                        </a>
-                    </div>
-                </div>
+                <!-- Motor akan di-generate oleh JavaScript -->
             </div>
         </div>
     </section>
@@ -1904,6 +1218,16 @@
                         <li>Jika pengembalian unit tidak sesuai dengan form setelah dilakukan pembayaran, maka <span class="highlight">tidak ada pengembalian uang sewa</span></li>
                     </ul>
                 </div>
+
+                <div class="terms-box">
+                    <h3>Keamanan & Perlengkapan</h3>
+                    <ul>
+                        <li>Motor wajib dikembalikan dalam kondisi baik</li>
+                        <li>Kehilangan kunci dikenakan denda <span class="highlight">Rp 150.000</span></li>
+                        <li>Kerusakan akibat kelalaian pengguna menjadi tanggung jawab penyewa</li>
+                        <li>Kehilangan motor menjadi tanggung jawab penyewa dengan nilai sesuai harga pasar</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -1921,10 +1245,10 @@
                     <i class="fas fa-shield-alt"></i>
                     <h3>Perlengkapan Keselamatan & Pendukung</h3>
                     <ul>
-                        <li>Helm (biasanya 2 buah, sesuai kapasitas motor)</li>
-                        <li>Jas Hujan (1 atau 2 set, terutama di daerah dengan cuaca tak menentu)</li>
+                        <li>Helm (2 buah, sesuai kapasitas motor)</li>
+                        <li>Jas Hujan (2 set, terutama di musim hujan)</li>
                         <li>Kunci Motor (tentu saja)</li>
-                        <li>STNK dan BPKB Fotokopi/Asli (untuk keperluan jika ditanya petugas)</li>
+                        <li>STNK dan BPKB Fotokopi untuk keperluan jika ditanya petugas</li>
                     </ul>
                 </div>
                 
@@ -1932,8 +1256,10 @@
                     <i class="fas fa-concierge-bell"></i>
                     <h3>Layanan Tambahan</h3>
                     <ul>
-                        <li>Free Antar-Jemput (dalam radius tertentu, biasanya di sekitar lokasi rental atau pusat kota)</li>
-                        <li>Bantuan Darurat/Contact Person (nomor yang bisa dihubungi jika motor mogok, kecelakaan, atau keperluan mendesak)</li>
+                        <li>Free Antar-Jemput (dalam radius 5 km)</li>
+                        <li>Bantuan Darurat/Contact Person 24 jam</li>
+                        <li>Panduan wisata Yogyakarta gratis</li>
+                        <li>Rekomendasi tempat makan dan wisata</li>
                     </ul>
                 </div>
                 
@@ -1942,8 +1268,9 @@
                     <h3>Kondisi Unit</h3>
                     <ul>
                         <li>Motor dalam kondisi siap pakai (mesin, rem, lampu, ban baik)</li>
-                        <li>Bensin (biasanya tangki kosong atau hanya berisi sedikit, jadi penyewa mengisi dari awal sendiri)</li>
-                        <li>Semua motor mendapatkan perawatan rutin</li>
+                        <li>Bensin (biasanya tangki kosong, penyewa mengisi dari awal sendiri)</li>
+                        <li>Semua motor mendapatkan perawatan rutin mingguan</li>
+                        <li>Unit selalu bersih dan wangi saat disewa</li>
                     </ul>
                 </div>
             </div>
@@ -1978,9 +1305,9 @@
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Email</h4>
+                            <h4>Email & Sosial Media</h4>
                             <p>email_motorjoaja@gmail.com</p>
-                            <p style="font-size: 12px; margin-top: 5px;">Instagram: @JS_RENT</p>
+                            <p>Instagram: @JS_RENT</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1992,14 +1319,15 @@
                     </div>
                     
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com/JS_RENT" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/6281214025894" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/JS_RENT" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/6281214025894" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="whatsapp-box">
+                    <i class="fab fa-whatsapp" style="font-size: 48px; color: #25D366; margin-bottom: 15px;"></i>
                     <h3>Sewa Langsung via WhatsApp</h3>
                     <p>Klik tombol di bawah untuk langsung menghubungi kami via WhatsApp. Kami akan membantu Anda memilih motor yang tepat dan proses penyewaan yang mudah.</p>
                     <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor" class="btn btn-whatsapp" target="_blank">
@@ -2036,12 +1364,8 @@
                 </div>
                 <div class="footer-col">
                     <h3>Motor Populer</h3>
-                    <ul>
-                        <li><a href="#" data-motor="BEAT FI / BEAT CW">BEAT FI / BEAT CW</a></li>
-                        <li><a href="#" data-motor="VARIO TECHNO">VARIO TECHNO</a></li>
-                        <li><a href="#" data-motor="PCX 150CC">PCX 150CC</a></li>
-                        <li><a href="#" data-motor="PCX 160CC">PCX 160CC</a></li>
-                        <li><a href="#" data-motor="VARIO 2020 UP">VARIO 2020 UP</a></li>
+                    <ul id="popularMotorsList">
+                        <!-- Akan diisi oleh JavaScript -->
                     </ul>
                 </div>
             </div>
@@ -2053,24 +1377,324 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
+    <button class="back-to-top" id="backToTop">
         <i class="fas fa-chevron-up"></i>
-    </div>
+    </button>
 
     <script>
-        // Fungsi untuk menangani error gambar
+        // Data motor
+        const motors = [
+            {
+                id: 1,
+                name: "BEAT CW",
+                brand: "honda",
+                type: "beat",
+                popular: true,
+                image: "images/beat cw.jpg",
+                description: "Hemat BBM, cocok untuk dalam kota",
+                engine: "110cc",
+                transmission: "Automatic",
+                fuel: "Bensin",
+                prices: {
+                    "1 Hari": 70000,
+                    "2 Hari": 140000,
+                    "3 Hari": 200000,
+                    "4 Hari": 260000,
+                    "5 Hari": 320000
+                }
+            },
+            {
+                id: 2,
+                name: "VARIO TECHNO",
+                brand: "honda",
+                type: "vario",
+                popular: true,
+                image: "images/VARIO TECHNO.png",
+                description: "Teknologi canggih, performa optimal",
+                engine: "125cc",
+                transmission: "Automatic",
+                fuel: "Bensin",
+                prices: {
+                    "1 Hari": 85000,
+                    "2 Hari": 165000,
+                    "3 Hari": 245000,
+                    "4 Hari": 320000,
+                    "5 Hari": 400000
+                }
+            },
+            {
+                id: 3,
+                name: "SCOOPY SPORTY",
+                brand: "honda",
+                type: "scoopy",
+                popular: false,
+                image: "images/scoopy sporty.jpg",
+                description: "Sporty dengan desain modern",
+                engine: "125cc",
+                transmission: "Automatic",
+                fuel: "Bensin",
+                prices: {
+                    "1 Hari": 90000,
+                    "2 Hari": 170000,
+                    "3 Hari": 260000,
+                    "4 Hari": 340000,
+                    "5 Hari": 420000
+                }
+            },
+            {
+                id: 4,
+                name: "VARIO ESP 125",
+                brand: "honda",
+                type: "vario",
+                popular: false,
+                image: "images/vario esp 125.jpg",
+                description: "ESP dengan teknologi terbaru",
+                engine: "125cc",
+                transmission: "Automatic",
+                fuel: "Bensin",
+                prices: {
+                    "1 Hari": 90000,
+                    "2 Hari": 170000,
+                    "3 Hari": 260000,
+                    "4 Hari": 340000,
+                    "5 Hari": 420000
+                }
+            },
+            {
+                id: 5,
+                name: "NMAX 125 Tech MAX",
+                brand: "yamaha",
+                type: "nmax",
+                popular: true,
+                image: "images/NMAX 125.jpg",
+                description: "Premium 125cc untuk perjalanan jauh",
+                engine: "125cc",
+                transmission: "Automatic",
+                fuel: "Bensin",
+                prices: {
+                    "1 Hari": 125000,
+                    "2 Hari": 250000,
+                    "3 Hari": 350000,
+                    "4 Hari": 470000,
+                    "5 Hari": 575000
+                }
+            },
+            {
+                id: 6,
+                name: "GEAR 125",
+                brand: "yamaha",
+                type: "gear",
+                popular: false,
+                image: "images/GEAR 125.jpg",
+                description: "Nyaman digunakan ketika perjalanan jauh",
+                engine: "125cc",
+                transmission: "Automatic",
+                fuel: "Bensin",
+                prices: {
+                    "1 Hari": 80000,
+                    "2 Hari": 160000,
+                    "3 Hari": 230000,
+                    "4 Hari": 300000,
+                    "5 Hari": 375000
+                }
+            },
+            {
+                id: 7,
+                name: "BEAT STREET",
+                brand: "honda",
+                type: "beat",
+                popular: false,
+                image: "images/beat street.jpg",
+                description: "Beat model Street",
+                engine: "110cc",
+                transmission: "Automatic",
+                fuel: "Bensin",
+                prices: {
+                    "1 Hari": 80000,
+                    "2 Hari": 160000,
+                    "3 Hari": 230000,
+                    "4 Hari": 300000,
+                    "5 Hari": 375000
+                }
+            },
+            {
+                id: 8,
+                name: "GENIO",
+                brand: "honda",
+                type: "genio",
+                popular: false,
+                image: "images/genio.jpg",
+                description: "Honda Genio ekonomis",
+                engine: "110cc",
+                transmission: "Automatic",
+                fuel: "Bensin",
+                prices: {
+                    "1 Hari": 80000,
+                    "2 Hari": 160000,
+                    "3 Hari": 230000,
+                    "4 Hari": 300000,
+                    "5 Hari": 375000
+                }
+            },
+            {
+                id: 9,
+                name: "VARIO 110",
+                brand: "honda",
+                type: "vario",
+                popular: false,
+                image: "images/vario 110.jpg",
+                description: "Vario 110cc irit bahan bakar",
+                engine: "110cc",
+                transmission: "Automatic",
+                fuel: "Bensin",
+                prices: {
+                    "1 Hari": 80000,
+                    "2 Hari": 160000,
+                    "3 Hari": 230000,
+                    "4 Hari": 300000,
+                    "5 Hari": 375000
+                }
+            },
+            {
+                id: 10,
+                name: "SCOOPY ISS",
+                brand: "honda",
+                type: "scoopy",
+                popular: false,
+                image: "images/scoopy iss.jpg",
+                description: "Scoopy dengan teknologi ISS",
+                engine: "110cc",
+                transmission: "Automatic",
+                fuel: "Bensin",
+                prices: {
+                    "1 Hari": 80000,
+                    "2 Hari": 160000,
+                    "3 Hari": 230000,
+                    "4 Hari": 310000,
+                    "5 Hari": 380000
+                }
+            },
+            {
+                id: 11,
+                name: "VARIO 2020 UP",
+                brand: "honda",
+                type: "vario",
+                popular: true,
+                image: "images/vario-2020.jpg",
+                description: "Vario model terbaru 2020 ke atas",
+                engine: "125cc",
+                transmission: "Automatic",
+                fuel: "Bensin",
+                prices: {
+                    "1 Hari": 100000,
+                    "2 Hari": 200000,
+                    "3 Hari": 280000,
+                    "4 Hari": 370000,
+                    "5 Hari": 450000
+                }
+            },
+            {
+                id: 12,
+                name: "PCX 160CC",
+                brand: "honda",
+                type: "pcx",
+                popular: true,
+                image: "images/pcx 160.png",
+                description: "PCX terbaru 160cc, performa maksimal",
+                engine: "160cc",
+                transmission: "Automatic",
+                fuel: "Bensin",
+                prices: {
+                    "1 Hari": 140000,
+                    "2 Hari": 270000,
+                    "3 Hari": 400000,
+                    "4 Hari": 520000,
+                    "5 Hari": 650000
+                }
+            }
+        ];
+
+        // Fungsi untuk menangani error gambar dengan placeholder 1:1
         function handleImageError(imgElement, motorName) {
             const parent = imgElement.parentNode;
             parent.innerHTML = `
                 <div class="placeholder-img">
-                    <div>
-                        <i class="fas fa-motorcycle" style="font-size: 40px; margin-bottom: 10px; color: #ccc;"></i><br>
-                        <span style="color: #999; font-size: 12px;">${motorName}</span><br>
-                        <span style="color: #bbb; font-size: 10px;">Gambar akan muncul jika tersedia</span>
+                    <div class="placeholder-icon">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <span style="color: #999; font-size: 11px;">${motorName}</span>
+                </div>
+                <div class="motor-img-overlay">${motorName} - Siap pakai</div>
+            `;
+        }
+
+        // Fungsi untuk membuat motor card dengan gambar 1:1
+        function createMotorCard(motor) {
+            const priceRows = Object.entries(motor.prices).map(([day, price]) => `
+                <tr>
+                    <td>${day}</td>
+                    <td class="${day === '1 Hari' ? 'price-highlight' : ''}">Rp ${price.toLocaleString('id-ID')}</td>
+                </tr>
+            `).join('');
+
+            return `
+                <div class="motor-card" data-brand="${motor.brand}" data-type="${motor.type}" data-id="${motor.id}">
+                    ${motor.popular ? '<div class="motor-badge">Populer</div>' : ''}
+                    <div class="motor-img">
+                        <div class="motor-img-content">
+                            <img src="${motor.image}" alt="${motor.name}" onerror="handleImageError(this, '${motor.name}')">
+                        </div>
+                        <div class="motor-img-overlay">${motor.description}</div>
+                    </div>
+                    <div class="motor-info">
+                        <h3>${motor.name}</h3>
+                        <table class="motor-price-table">
+                            <thead>
+                                <tr>
+                                    <th>Hari</th>
+                                    <th>Harga</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${priceRows}
+                            </tbody>
+                        </table>
+                        <div class="motor-specs">
+                            <div class="spec">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>${motor.engine}</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-cogs"></i>
+                                <span>${motor.transmission}</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-oil-can"></i>
+                                <span>${motor.fuel}</span>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <div>
+                                <div class="price-amount">Rp ${motor.prices['1 Hari'].toLocaleString('id-ID')}</div>
+                                <div class="price-period">/ hari</div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/6281214025894?text=Halo%20JS%20Rental,%20saya%20ingin%20menyewa%20motor%20${encodeURIComponent(motor.name)}.%20Mohon%20info%20ketersediaan%20dan%20harga." class="wa-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Sewa via WhatsApp
+                        </a>
                     </div>
                 </div>
-                <div class="motor-img-overlay">${imgElement.nextElementSibling.textContent}</div>
             `;
+        }
+
+        // Fungsi untuk mengisi daftar motor populer di footer
+        function populatePopularMotors() {
+            const popularMotorsList = document.getElementById('popularMotorsList');
+            const popularMotors = motors.filter(motor => motor.popular);
+            
+            popularMotorsList.innerHTML = popularMotors.map(motor => `
+                <li><a href="#" data-motor-id="${motor.id}">${motor.name}</a></li>
+            `).join('');
         }
 
         // DOM Elements
@@ -2078,7 +1702,13 @@
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mainNav = document.getElementById('mainNav');
         const backToTop = document.getElementById('backToTop');
-        const motorCards = document.querySelectorAll('.motor-card');
+        const motorGrid = document.getElementById('motorGrid');
+
+        // Render motor cards
+        function renderMotorCards(motorsToRender) {
+            motorGrid.innerHTML = motorsToRender.map(motor => createMotorCard(motor)).join('');
+            addMotorCardListeners();
+        }
 
         // Filter motorcycles
         filterButtons.forEach(button => {
@@ -2097,37 +1727,29 @@
 
         // Function to filter motorcycles
         function filterMotorcycles(filter) {
-            motorCards.forEach(card => {
-                const brand = card.getAttribute('data-brand');
-                const type = card.getAttribute('data-type');
+            let filteredMotors = motors;
+            
+            if (filter !== 'all') {
+                filteredMotors = motors.filter(motor => {
+                    if (filter === 'honda') return motor.brand === 'honda';
+                    if (filter === 'yamaha') return motor.brand === 'yamaha';
+                    return motor.type === filter;
+                });
+            }
+            
+            renderMotorCards(filteredMotors);
+            
+            // Add animation effect
+            const cards = motorGrid.querySelectorAll('.motor-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
                 
-                let shouldShow = false;
-                
-                if (filter === 'all') {
-                    shouldShow = true;
-                } else if (filter === 'honda' && brand === 'honda') {
-                    shouldShow = true;
-                } else if (filter === 'beat' && type === 'beat') {
-                    shouldShow = true;
-                } else if (filter === 'vario' && type === 'vario') {
-                    shouldShow = true;
-                } else if (filter === 'pcx' && type === 'pcx') {
-                    shouldShow = true;
-                } else if (filter === 'scoopy' && type === 'scoopy') {
-                    shouldShow = true;
-                }
-                
-                if (shouldShow) {
-                    card.style.display = 'block';
-                    // Force reflow for animation
-                    card.offsetHeight;
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
                     card.style.opacity = '1';
-                } else {
-                    card.style.opacity = '0';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
+                    card.style.transform = 'translateY(0)';
+                }, index * 50);
             });
         }
 
@@ -2138,9 +1760,11 @@
             if (mainNav.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
             } else {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+                document.body.style.overflow = '';
             }
         });
 
@@ -2163,19 +1787,20 @@
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    e.preventDefault();
+                    
                     // Close mobile menu if open
                     if (mainNav.classList.contains('active')) {
                         mainNav.classList.remove('active');
                         const icon = mobileMenuBtn.querySelector('i');
                         icon.classList.remove('fa-times');
                         icon.classList.add('fa-bars');
+                        document.body.style.overflow = '';
                     }
                     
                     window.scrollTo({
@@ -2186,39 +1811,88 @@
             });
         });
 
-        // Motor popular links
-        document.querySelectorAll('.footer-col a[data-motor]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const motorName = this.getAttribute('data-motor');
-                
-                // Scroll to motor section
-                document.querySelector('#motor').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+        // Add click event to motor cards for highlighting
+        function addMotorCardListeners() {
+            const motorCards = document.querySelectorAll('.motor-card');
+            motorCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Remove highlight from all cards
+                    motorCards.forEach(c => c.classList.remove('highlighted'));
+                    
+                    // Add highlight to clicked card
+                    this.classList.add('highlighted');
+                    
+                    // Remove highlight after 2 seconds
+                    setTimeout(() => {
+                        this.classList.remove('highlighted');
+                    }, 2000);
                 });
-                
-                // Highlight the corresponding motor
-                setTimeout(() => {
-                    const allMotorCards = document.querySelectorAll('.motor-card');
-                    allMotorCards.forEach(card => {
-                        const cardTitle = card.querySelector('h3').textContent;
-                        if (cardTitle === motorName) {
-                            card.style.boxShadow = '0 0 0 3px var(--primary)';
-                            card.style.transition = 'box-shadow 0.3s ease';
-                            
-                            // Remove highlight after 3 seconds
-                            setTimeout(() => {
-                                card.style.boxShadow = '';
-                            }, 3000);
-                        }
-                    });
-                }, 800);
             });
+        }
+
+        // Add click event to popular motor links in footer
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('#popularMotorsList a[data-motor-id]')) {
+                e.preventDefault();
+                const motorId = parseInt(e.target.getAttribute('data-motor-id'));
+                const motor = motors.find(m => m.id === motorId);
+                
+                if (motor) {
+                    // Scroll to motor section
+                    document.querySelector('#motor').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Filter to show the motor
+                    setTimeout(() => {
+                        // Find appropriate filter button
+                        let filter = 'all';
+                        if (motor.brand === 'honda') filter = 'honda';
+                        if (motor.brand === 'yamaha') filter = 'yamaha';
+                        
+                        // Activate filter button
+                        filterButtons.forEach(btn => {
+                            if (btn.getAttribute('data-filter') === filter) {
+                                filterButtons.forEach(b => b.classList.remove('active'));
+                                btn.classList.add('active');
+                                filterMotorcycles(filter);
+                            }
+                        });
+                        
+                        // Highlight the motor card
+                        setTimeout(() => {
+                            const motorCard = document.querySelector(`.motor-card[data-id="${motorId}"]`);
+                            if (motorCard) {
+                                motorCard.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'center'
+                                });
+                                
+                                // Add highlight effect
+                                motorCard.style.boxShadow = '0 0 0 3px var(--primary)';
+                                motorCard.style.zIndex = '10';
+                                
+                                // Remove highlight after 3 seconds
+                                setTimeout(() => {
+                                    motorCard.style.boxShadow = '';
+                                    motorCard.style.zIndex = '';
+                                }, 3000);
+                            }
+                        }, 500);
+                    }, 500);
+                }
+            }
         });
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
+            // Render all motors initially
+            renderMotorCards(motors);
+            
+            // Populate popular motors in footer
+            populatePopularMotors();
+            
             // Set active nav link based on scroll position
             window.addEventListener('scroll', function() {
                 const sections = document.querySelectorAll('section');
@@ -2242,10 +1916,31 @@
                 });
             });
             
-            // Add transition to motor cards for smooth filtering
-            motorCards.forEach(card => {
-                card.style.transition = 'opacity 0.3s ease';
-            });
+            // Add CSS for highlighted motor cards
+            const style = document.createElement('style');
+            style.textContent = `
+                .motor-card.highlighted {
+                    box-shadow: 0 0 0 3px var(--primary) !important;
+                    transform: translateY(-5px) scale(1.02) !important;
+                    transition: all 0.3s ease !important;
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Add animation to motor cards on load
+            setTimeout(() => {
+                const motorCards = document.querySelectorAll('.motor-card');
+                motorCards.forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 300);
         });
     </script>
 </body>
